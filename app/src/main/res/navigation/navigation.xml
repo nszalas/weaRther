@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/weatherParamsLayout">
+
+
+    <fragment
+        android:id="@+id/weatherParamsLayout"
+        android:name="com.nszalas.wearther.view.WeatherParamsLayout"
+        android:label="normal_view"
+        tools:layout="@layout/normal_view">
+        <action
+            android:id="@+id/action_weatherParamsLayout_to_weatherParamsElderly"
+            app:destination="@id/weatherParamsElderly" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherParamsElderly"
+        android:name="com.nszalas.wearther.view.WeatherParamsElderly"
+        android:label="elderly_view"
+        tools:layout="@layout/elderly_view" >
+        <action
+            android:id="@+id/action_weatherParamsElderly_to_weatherParamsLayout"
+            app:destination="@id/weatherParamsLayout" />
+    </fragment>
+
+
+</navigation>

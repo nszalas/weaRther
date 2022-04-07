@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBarE"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/appbar_top_back"
+            app:title="@string/app_name"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbarSize="0.1dp"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:ignore="ScrollViewCount">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPadding="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputCityE"
+                        android:layout_width="250dp"
+                        android:layout_height="match_parent"
+                        android:text="Enter city name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/searchButtonE"/>
+
+                    <Button
+                        android:id="@+id/searchButtonE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#689f38"
+                        android:textColor="@color/white"
+                        android:text="Search"
+                        android:elevation="8dp"
+                        app:flow_horizontalAlign="end"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/inputCityE"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/main_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPadding="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/cardCityE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textSize="40dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextClock
+                        android:id="@+id/cardDateTimeE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="clock"
+                        android:textSize="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cardCityE" />
+
+                    <TextView
+                        android:id="@+id/cardTemperatureE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:text="temo"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:textSize="50dp"
+                        app:layout_constraintEnd_toStartOf="@id/cardIconE"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cardDateTimeE"/>
+
+                    <ImageView
+                        android:id="@+id/cardIconE"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cardTemperatureE"
+                        app:layout_constraintTop_toBottomOf="@id/cardDateTimeE" />
+
+                    <TextView
+                        android:id="@+id/cardShortDesE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="temp"
+                        android:padding="10dp"
+                        android:textSize="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cardIconE"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAllPressureE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPadding="5dp"
+                app:contentPaddingLeft="20dp"
+                app:contentPaddingRight="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/cardPressureImageE"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardPressureTextE"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/cardPressureTextE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Pressure"
+                        android:textSize="27dp"
+                        android:padding="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cardPressureImageE"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <TextView
+                        android:id="@+id/cardPressureE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="tu jestem"
+                        android:textSize="27dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAllWindE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPadding="5dp"
+                app:contentPaddingLeft="20dp"
+                app:contentPaddingRight="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardAllPressureE">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/cardWindImageE"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardWindTextE"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/cardWindTextE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Wind Speed"
+                        android:padding="10dp"
+                        android:textSize="27dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cardWindImageE"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <TextView
+                        android:id="@+id/cardWindSpeedE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="tu jestem"
+                        android:textSize="27dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAllSunE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPadding="5dp"
+                app:contentPaddingLeft="20dp"
+                app:contentPaddingRight="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardAllWindE">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/cardSunriseImageE"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cardSunriseTextE"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/cardSunriseTextE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Sunrise"
+                        android:padding="10dp"
+                        android:textSize="27dp"
+                        app:layout_constraintBottom_toTopOf="@id/cardSunsetTextE"
+                        app:layout_constraintStart_toEndOf="@id/cardSunriseImageE"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <TextView
+                        android:id="@+id/cardSunriseE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="tu jestem"
+                        android:textSize="27dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toTopOf="@id/cardSunsetE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:dividerInsetStart="10dp"
+                        app:dividerInsetEnd="10dp"
+                        app:dividerThickness="3dp"
+                        app:layout_constraintBottom_toTopOf="@+id/cardSunsetTextE"
+                        app:layout_constraintTop_toBottomOf="@+id/cardSunriseImageE"/>
+
+
+                    <ImageView
+                        android:id="@+id/cardSunsetImageE"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardSunriseImageE"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/cardSunsetTextE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Sunset"
+                        android:padding="10dp"
+                        android:textSize="27dp"
+                        app:layout_constraintTop_toBottomOf="@+id/cardSunriseTextE"
+                        app:layout_constraintStart_toEndOf="@id/cardSunsetImageE"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    <TextView
+                        android:id="@+id/cardSunsetE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="tu jestem"
+                        android:textSize="27dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@+id/cardSunriseE"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
